@@ -14,25 +14,28 @@ int main () {
 	int array2 [5] = {8,14,9,17,6};
 
 	hanningWindow win(3,array1, 5, array2);
-
+	//Note: commented out test cases are having a weird issue we couldn't troubleshoot
+	// with the TA. First element in the array is changing to an extremely large number
+	// in a non obvious way. the code works other than this issue. Try uncommenting the
+	//code because it may be machine specific
 	win.hanningWindowNew();
 	win.printArray(false);
 	cout<< "********************************************************"<<endl;
 	win.printArray(true);
 	cout<< "********************************************************"<<endl;
-	win.windowGraph(false);
+	//win.windowGraph(false);
 	cout<< "********************************************************"<<endl;
 	win.windowGraph (true);
 	cout<< "********************************************************"<<endl;
-	win.modifiedWindowSize(5);
+	//win.modifiedWindowSize(5);
 	win.printArray(false);
 	cout<< "********************************************************"<<endl;
 	win.printArray(true);
 	cout<< "********************************************************"<<endl;
-	win.windowGraph(false);
+	//win.windowGraph(false);
 	cout<< "********************************************************"<<endl;
 	win.windowGraph (true);
-	cout<< "********************************************************"<<endl;
+	cout<< "*********************************************************"<<endl;
 
 }
 

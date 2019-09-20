@@ -10,11 +10,13 @@
 using namespace std;
 
 
-	hanningWindow::hanningWindow(int w, int *x,int s, int *y){
+	hanningWindow::hanningWindow(int w, int x[],int s, int y[]){
 		windowSize = w;
 		arr = x;
 		size = s;
 		filteredArr = y;
+
+
 
 		//Constructor
 
@@ -58,12 +60,14 @@ int hanningWindow::hanningWindow1(int arr[],int len, int window){
 void hanningWindow::hanningWindowNew(){
 	for(int i = 0; i < size; i++)
 	{
+		cout<<arr[0]<<endl;
 		if(i < windowSize/2 || size - i <= windowSize/2)//this knows where to place the 0s of the array
 			filteredArr[i] = 0;
 		if(i > size - windowSize/2)
 			break;
 		filteredArr[i + windowSize/2] = hanningWindow1(&arr[i], size, windowSize);//sets the element in the array to the approriate value
 	}
+
 	//for(int i = 0; i < size; i++){
 	//	cout << filteredArr[i];//prints the array
 	//}
@@ -86,7 +90,7 @@ bool hanningWindow::windowGraph(bool x){
 	}
 	if ( x == false)
 	{
-		high = highNum (arr);
+		high = highNum (&arr[0]);
 		low = lowNum (arr);
 	}
 
@@ -175,8 +179,10 @@ if (x == true)
 else
 {
 	array = arr;
+
 }
-for (int i = 0; i < size; i++)
+
+for (int i = 0; i < size +1; i++)
 {
 	cout<< array[i] << endl;
 }
